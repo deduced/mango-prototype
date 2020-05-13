@@ -1,7 +1,6 @@
 import React from 'react';
 import Image from 'gatsby-image';
 import { css } from '@emotion/core';
-import { Link } from 'gatsby';
 import useInstagram from '../hooks/use-instagram';
 
 const Insta = () => {
