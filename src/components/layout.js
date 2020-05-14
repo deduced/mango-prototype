@@ -3,12 +3,13 @@ import { Global, css } from '@emotion/core';
 import { Helmet } from 'react-helmet';
 import Header from './header';
 import useSiteMetadata from '../hooks/use-sitemetadata';
+import { IdentityContextProvider } from 'react-netlify-identity-widget';
 
 const Layout = ({ children }) => {
   const { title, description } = useSiteMetadata();
 
   return (
-    <>
+    <IdentityContextProvider url="https://mango-prototype.netlify.com">
       <Global
         styles={css`
           * {
@@ -68,7 +69,7 @@ const Layout = ({ children }) => {
       >
         {children}
       </main>
-    </>
+    </IdentityContextProvider>
   );
 };
 
