@@ -28,3 +28,11 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     });
   });
 };
+
+exports.onCreatePage = ({ page, actions }) => {
+  //Re-route any path starting with '/dashboard' to the dashboard page. This is so that we can route to the proper component for authentication (so that we can have private routing)
+  if (page.path.match(/^\/dashboard/)) {
+    page.matchPath = '/dashboard/*';
+    actions.createPage(page);
+  }
+};
