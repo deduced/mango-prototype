@@ -2,7 +2,7 @@ import React from 'react';
 import { useIdentityContext } from 'react-netlify-identity-widget';
 import { navigate } from 'gatsby';
 
-const RouteLogin = () => {
+const RouteLogin = ({ showModal }) => {
   const identity = useIdentityContext();
 
   if (identity?.isLoggedIn) {
@@ -12,7 +12,7 @@ const RouteLogin = () => {
   return (
     <>
       <h1>Log In Or Sign Up</h1>
-      <button>Log In</button>
+      <button onClick={showModal}>Log In</button>
     </>
   );
 };
