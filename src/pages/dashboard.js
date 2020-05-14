@@ -13,7 +13,7 @@ const Dashboard = ({ location }) => {
       // Routes any match to login component and replace history to avoid redirect loops when using back/foward buttons
       navigate('/dashboard/login', { replace: true });
     }
-  }, []);
+  }, [location.pathname]);
 
   return (
     <>
