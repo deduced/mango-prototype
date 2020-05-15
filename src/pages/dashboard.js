@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { navigate } from 'gatsby';
 import { Router } from '@reach/router';
+import GatewayRoute from '../components/routes/gateway';
 import IdentityModal from 'react-netlify-identity-widget';
 import Layout from '../components/layout';
 import Profile from '../components/profile';
@@ -25,11 +26,11 @@ const Dashboard = ({ location }) => {
   return (
     <>
       <Layout>
-        <Profile />
+        <Profile showModal={showModal} />
         {/* <h1>Dashboard</h1> */}
         <Router>
-          <RouteBase path="/dashboard/base" />
-          <RouteSecret path="/dashboard/secret" />
+          <GatewayRoute path="/dashboard/base" component={RouteBase} />
+          <GatewayRoute path="/dashboard/secret" component={RouteSecret} />
           <RouteLogin path="/dashboard/login" showModal={showModal} />
         </Router>
         <IdentityModal
