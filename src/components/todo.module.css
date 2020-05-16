@@ -1,3 +1,26 @@
 .completed {
+  color: #777;
   text-decoration: line-through;
+}
+
+.label {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+}
+
+.toggle {
+  cursor: pointer;
+  margin-right: 1rem;
+}
+
+.delete {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
 }

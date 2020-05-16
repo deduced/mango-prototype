@@ -1,7 +1,13 @@
 import React, { useEffect, useState } from 'react';
+import styled from '@emotion/styled';
 import axios from 'axios';
 import Todo from './todo';
 import Form from './form';
+
+const StyledLi = styled.li`
+  display: flex;
+  align-items: center;
+`;
 
 const Todos = () => {
   const [status, setStatus] = useState('loading');
@@ -41,9 +47,9 @@ const Todos = () => {
         {todos ? (
           <ul>
             {todos.map(todo => (
-              <li key={todo._id}>
-                <Todo todo={todo} />
-              </li>
+              <StyledLi key={todo._id}>
+                <Todo todo={todo} reloadTodos={reloadTodos} />
+              </StyledLi>
             ))}
           </ul>
         ) : (
