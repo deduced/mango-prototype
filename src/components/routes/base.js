@@ -1,5 +1,10 @@
 import React from 'react';
+import Todos from '../todos';
 
-const RouteBase = () => <h1>All Your Base Are Belong To Us</h1>;
+const RouteBase = () => (
+  <>
+    <Todos />
+  </>
+);
 
 export default RouteBase;

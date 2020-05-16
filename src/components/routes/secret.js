@@ -1,5 +1,9 @@
 import React from 'react';
 
-const RouteSecret = () => <h1>Super duper secrets live here</h1>;
+const RouteSecret = () => (
+  <>
+    <h1>Super Secret Section</h1>
+  </>
+);
 
 export default RouteSecret;
