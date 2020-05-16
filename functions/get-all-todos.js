@@ -28,6 +28,6 @@ exports.handler = async () => {
       body: JSON.stringify({ todos: data.allTodos.data }),
     };
   } catch (error) {
-    console.error(error);
+    console.log(error);
   }
 };
