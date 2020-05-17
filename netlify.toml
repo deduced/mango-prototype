@@ -4,10 +4,10 @@
   publish = "public"
 
 [[redirects]]
-  from = "api/*"
-  to = ".netlify/functions/:splat"
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
   status = 200
-  
+
 [[redirects]]
   from = "/dashboard/*"
   to = "/dashboard"
