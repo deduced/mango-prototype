@@ -36,11 +36,13 @@
     "gatsby-remark-images": "^3.3.2",
     "gatsby-source-filesystem": "^2.3.1",
     "gatsby-source-instagram": "^0.7.0",
+    "gatsby-source-shopify": "^3.2.8",
     "gatsby-transformer-sharp": "^2.5.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^6.0.0",
-    "react-netlify-identity-widget": "^0.2.7"
+    "react-netlify-identity-widget": "^0.2.7",
+    "shopify-buy": "^2.10.0"
   },
   "devDependencies": {
     "cross-env": "^6.0.3",

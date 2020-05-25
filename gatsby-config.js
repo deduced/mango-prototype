@@ -52,5 +52,14 @@ module.exports = {
         url: 'https://mango-prototype.netlify.app',
       },
     },
+    {
+      resolve: `gatsby-source-shopify`,
+      options: {
+        // The domain name of your Shopify shop.
+        shopName: `mango-creative.myshopify.com`,
+        // The storefront access token
+        accessToken: `931712053b084a3c653549d23a19fafa`,
+      },
+    },
   ],
 };
