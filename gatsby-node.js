@@ -29,6 +29,40 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   });
 };
 
+// Programmatically create pages based on our products.
+exports.createPages = async ({ graphql, actions }) => {
+  const { createPage } = actions;
+  // Query for all products in Shopify
+  const result = await graphql(`
+    query {
+      allShopifyProduct {
+        nodes {
+          shopifyId
+          handle
+        }
+      }
+    }
+  `);
+
+  if (result.errors) {
+    reporter.panic('failed to create products', result.errors);
+  }
+
+  const products = result.data.allShopifyProduct.nodes;
+
+  // Iterate over all products and create a new page using a template
+  // The product "handle" is generated automatically by Shopify
+  products.forEach(product => {
+    createPage({
+      path: `/product/${product.handle}`,
+      component: require.resolve(`./src/templates/product.js`),
+      context: {
+        id: product.shopifyId,
+      },
+    });
+  });
+};
+
 exports.onCreatePage = ({ page, actions }) => {
   //Re-route any path starting with '/dashboard' to the dashboard page. This is so that we can route to the proper component for authentication (so that we can have private routing)
   if (page.path.match(/^\/dashboard/)) {
