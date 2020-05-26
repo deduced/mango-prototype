@@ -4,6 +4,8 @@ import Insta from '../components/insta';
 import Layout from '../components/layout';
 import PostPreview from '../components/post-preview';
 import usePosts from '../hooks/use-posts';
+import ProductsList from '../components/products-list';
+import { css } from '@emotion/core';
 
 export default () => {
   const posts = usePosts();
@@ -17,6 +19,12 @@ export default () => {
           <PostPreview key={post.slug} post={post} />
         ))}
         <Insta />
+        <hr
+          css={css`
+            border: 1px solid #ddd;
+          `}
+        />
+        <ProductsList />
       </Layout>
     </>
   );
