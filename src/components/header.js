@@ -31,7 +31,7 @@ const Header = () => (
     `}
   >
     <NavLink to="/" fontWeight="bold">
-      Da Blog!
+      Mango!
     </NavLink>
 
     <nav
@@ -44,6 +44,9 @@ const Header = () => (
       </NavLink>
       <NavLink activeClassName="current-page" to="/about">
         About
+      </NavLink>
+      <NavLink activeClassName="current-page" to="/products">
+        Products
       </NavLink>
       <NavLink activeClassName="current-page" to="/dashboard">
         Dashboard
