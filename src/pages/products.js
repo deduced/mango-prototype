@@ -1,47 +1,14 @@
 import React from 'react';
-import { Link, graphql } from 'gatsby';
 
 import Layout from '../components/layout';
+import ProductsList from '../components/products-list';
 
-const ProductsPage = ({ data }) => {
-  const products = data.allShopifyProduct.edges;
-
+const ProductsPage = () => {
   return (
     <Layout>
-      <h1>Products</h1>
-      <ul>
-        {products.map(({ node }) => (
-          <li key={node.shopifyId}>
-            <h3>
-              <Link to={`/product/${node.handle}`}>{node.title}</Link>
-              {' - '}${node.priceRange.minVariantPrice.amount}
-            </h3>
-            <p>{node.description}</p>
-          </li>
-        ))}
-      </ul>
+      <ProductsList />
     </Layout>
   );
 };
 
 export default ProductsPage;
-
-export const query = graphql`
-  {
-    allShopifyProduct(sort: { fields: [title] }) {
-      edges {
-        node {
-          title
-          shopifyId
-          description
-          handle
-          priceRange {
-            minVariantPrice {
-              amount
-            }
-          }
-        }
-      }
-    }
-  }
-`;
