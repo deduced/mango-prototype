@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { Link, graphql, useStaticQuery } from 'gatsby';
+import { graphql, useStaticQuery } from 'gatsby';
 import BackgroundImage from 'gatsby-background-image';
 
 const ImageBackground = styled(BackgroundImage)`
@@ -54,11 +54,8 @@ const Hero = () => {
   return (
     <ImageBackground Tag="section" fluid={image.sharp.fluid}>
       <TextBox>
-        <h1>Da Blog! &hearts;</h1>
-        <p>
-          This is my site to play with Gatsby. I like it so far yo!{' '}
-          <Link to="about">Learn about me &rarr;</Link>
-        </p>
+        <h1>Mango React Themes &hearts;</h1>
+        <p>Amazing, developer-first, premium themes for React </p>
       </TextBox>
     </ImageBackground>
   );
