@@ -22,7 +22,7 @@
     "@reach/dialog": "^0.10.2",
     "@reach/tabs": "^0.10.2",
     "@reach/visually-hidden": "^0.10.2",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "dotenv": "^8.2.0",
     "gatsby": "^2.18.6",
     "gatsby-background-image": "^1.1.1",
